@@ -12,8 +12,8 @@ import javax.persistence.*;
 @Getter
 @Setter
 @ToString
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @EqualsAndHashCode
 @Table(name = "route_tb")
@@ -24,7 +24,8 @@ public class Route {
     private int number; // продумати чи треба окремо номер чи зійде айдішка
     private String title;
 
-    @OneToOne(mappedBy = "route_tb")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "transport_id", referencedColumnName = "id")
     private PublicTransport transport;
 
     @ElementCollection

@@ -10,8 +10,8 @@ import java.util.Set;
 @Getter
 @Setter
 @ToString
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @EqualsAndHashCode
 @Table(name = "schedule_tb")
@@ -24,9 +24,9 @@ public class Schedule {
     private Set<String> scheduleHours = new LinkedHashSet<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(foreignKey = @ForeignKey(name = "transport_id"), name = "transport_id")
+    @JoinColumn(foreignKey = @ForeignKey(name = "public_transport_id"), name = "public_transport_id")
     @JsonIgnoreProperties(value = {"schedule_tb", "hibernateLazyInitializer"})
-    private PublicTransport transport;
+    private PublicTransport publicTransport;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(foreignKey = @ForeignKey(name = "stop_id"), name = "stop_id")

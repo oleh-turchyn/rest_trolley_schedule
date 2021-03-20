@@ -10,11 +10,11 @@ import java.util.Set;
 @Getter
 @Setter
 @ToString
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @EqualsAndHashCode
-@Table(name = "public_transport_tb")
+@Table(name = "publicTransport_tb")
 public class PublicTransport {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

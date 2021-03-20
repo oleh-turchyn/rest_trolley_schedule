@@ -12,8 +12,8 @@ import java.util.Set;
 @Getter
 @Setter
 @ToString
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @EqualsAndHashCode
 @Table(name = "stop_tb")
@@ -37,5 +37,10 @@ public class Stop {
     @JoinColumn(foreignKey = @ForeignKey(name = "route_id"), name = "route_id")
     @JsonIgnoreProperties(value = {"stop_tb", "hibernateLazyInitializer"})
     private Route route;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(foreignKey = @ForeignKey(name = "public_transport_id"), name = "public_transport_id")
+    @JsonIgnoreProperties(value = {"stop_tb", "hibernateLazyInitializer"})
+    private PublicTransport publicTransport;
 
 }
