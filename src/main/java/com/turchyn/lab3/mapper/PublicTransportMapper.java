@@ -5,6 +5,8 @@ import com.turchyn.lab3.model.dto.PublicTransportDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
+import java.util.List;
+
 @Mapper
 public interface PublicTransportMapper {
 
@@ -14,4 +16,7 @@ public interface PublicTransportMapper {
 
     PublicTransport toPublicTransport(PublicTransportDto publicTransportDto);
 
+    List<PublicTransportDto> transportToTransportDtos(List<PublicTransport> transports);
+
+    List<PublicTransport> transportDtoToTransports(List<PublicTransportDto> transportDtos);
 }

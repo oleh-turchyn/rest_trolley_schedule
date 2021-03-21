@@ -15,7 +15,7 @@ public interface BusMapper {
 
     Bus toBus(BusDto busDto);
 
-    List<BusDto> busToBusDtos(List<Bus> stops);
+    List<BusDto> busToBusDtos(List<Bus> buses);
 
     List<Bus> busDtoToBuses(List<BusDto> busDtos);
 }

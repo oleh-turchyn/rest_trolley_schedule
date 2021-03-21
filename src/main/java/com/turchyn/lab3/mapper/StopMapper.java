@@ -13,7 +13,7 @@ public interface StopMapper {
 
     StopDto toDto(Stop stop);
 
-    Stop toStoppage(StopDto stopDto);
+    Stop toStop(StopDto stopDto);
 
     List<StopDto> stopToStopDtos(List<Stop> stops);
 

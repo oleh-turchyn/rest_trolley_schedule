@@ -5,6 +5,8 @@ import com.turchyn.lab3.model.dto.RouteDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
+import java.util.List;
+
 @Mapper
 public interface RouteMapper {
     RouteMapper INSTANCE = Mappers.getMapper(RouteMapper.class);
@@ -12,4 +14,8 @@ public interface RouteMapper {
     RouteDto toDto(Route route);
 
     Route toRoute(RouteDto routeDto);
+
+    List<RouteDto> routeToRouteDtos(List<Route> routes);
+
+    List<Route> routeDtoToRoutes(List<RouteDto> routeDtos);
 }
