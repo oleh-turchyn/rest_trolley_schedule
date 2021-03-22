@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Service
 public class BusServiceImpl implements BusService {
-    BusRepository busRepository;
+    private final BusRepository busRepository;
 
     @Autowired
     public BusServiceImpl(BusRepository busRepository) {

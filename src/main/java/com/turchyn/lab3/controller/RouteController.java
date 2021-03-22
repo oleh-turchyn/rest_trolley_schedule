@@ -15,7 +15,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api")
 public class RouteController {
-    RouteService routeService;
+    private final RouteService routeService;
 
     public RouteController(RouteService routeService) {
         this.routeService = routeService;

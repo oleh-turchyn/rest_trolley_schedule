@@ -16,7 +16,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api")
 public class BusController {
-    BusService busService;
+    private final BusService busService;
 
     @Autowired
     public BusController(BusService busService) {

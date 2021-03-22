@@ -16,7 +16,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api")
 public class PublicTransportController {
-    PublicTransportService publicTransportService;
+    private final PublicTransportService publicTransportService;
 
     @Autowired
     public PublicTransportController(PublicTransportService publicTransportService) {

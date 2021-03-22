@@ -16,12 +16,13 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api")
 public class ScheduleController {
-    ScheduleService scheduleService;
+    private final ScheduleService scheduleService;
 
     @Autowired
     public ScheduleController(ScheduleService scheduleService) {
         this.scheduleService = scheduleService;
     }
+
     @GetMapping("/schedules")
     public ResponseEntity<List<ScheduleDto>> findAll() {
         return ResponseEntity.ok(ScheduleMapper.INSTANCE.scheduleToScheduleDtos(scheduleService.findAll()));

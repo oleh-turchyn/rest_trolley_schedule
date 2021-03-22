@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Service
 public class PublicTransportServiceImpl implements PublicTransportService {
-    PublicTransportRepository publicTransportRepository;
+    private final PublicTransportRepository publicTransportRepository;
 
     @Autowired
     public PublicTransportServiceImpl(PublicTransportRepository publicTransportRepository) {

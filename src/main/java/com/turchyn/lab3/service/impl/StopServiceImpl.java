@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Service
 public class StopServiceImpl implements StopService {
-    StopRepository stopRepository;
+    private final StopRepository stopRepository;
 
     @Autowired
     public StopServiceImpl(StopRepository stopRepository) {

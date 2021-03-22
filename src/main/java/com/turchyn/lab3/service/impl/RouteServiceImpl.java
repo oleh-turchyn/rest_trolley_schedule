@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Service
 public class RouteServiceImpl implements RouteService {
-    RouteRepository routeRepository;
+    private final RouteRepository routeRepository;
 
     @Autowired
     public RouteServiceImpl(RouteRepository routeRepository) {

@@ -16,7 +16,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api")
 public class StopController {
-    StopService stopService;
+    private final StopService stopService;
 
     @Autowired
     public StopController(StopService stopService) {
