@@ -17,9 +17,11 @@ public class StopDto {
     private int id;
     private String name;
     private String carrier;
-    private Set<String> availableTransport = new LinkedHashSet<>();
-    private Set<ScheduleDto> schedules = new HashSet<>();
+    private String transport;
+//    private Set<String> availableTransport = new LinkedHashSet<>();
+//    private Set<ScheduleDto> schedules = new HashSet<>();
     private RouteDto route;       // тут би назву маршруту
+    private PublicTransportDto publicTransport;
 
 
 

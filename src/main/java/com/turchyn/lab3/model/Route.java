@@ -23,13 +23,15 @@ public class Route {
     private int id;
     private int number; // продумати чи треба окремо номер чи зійде айдішка
     private String title;
-
+    private String days;
     @OneToOne(cascade = CascadeType.ALL)
+    @JsonIgnore
     @JoinColumn(name = "transport_id", referencedColumnName = "id")
     private PublicTransport transport;
 
     @ElementCollection
     @CollectionTable(name = "route_days",joinColumns = @JoinColumn(name = "route_id"))
+    @JsonIgnore
     private Set<String> routeDays = new LinkedHashSet<>();
 
 //    @ElementCollection(fetch = FetchType.LAZY)

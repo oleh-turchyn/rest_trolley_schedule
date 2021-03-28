@@ -1,5 +1,6 @@
 package com.turchyn.lab3.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
@@ -19,7 +20,10 @@ public class Schedule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    private String hours;
     @ElementCollection
+    @JsonIgnore
     @CollectionTable(name = "schedule_hours",joinColumns = @JoinColumn(name = "schedule_id"))
     private Set<String> scheduleHours = new LinkedHashSet<>();
 

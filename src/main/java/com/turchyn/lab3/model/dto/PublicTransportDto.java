@@ -16,9 +16,9 @@ public class PublicTransportDto {
     private String type;
     private double price;
     private int amountOfSeats;
-    private RouteDto routeNumber;
-    private Set<StopDto> stops= new HashSet<>();
-    private Set<ScheduleDto> schedules = new HashSet<>();
+//    private RouteDto routeNumber;
+//    private Set<StopDto> stops= new HashSet<>();
+//    private Set<ScheduleDto> schedules = new HashSet<>();
 
     //    @OneToOne(cascade = CascadeType.ALL)
     //    @JoinColumn(name = "route_id", referencedColumnName = "id")

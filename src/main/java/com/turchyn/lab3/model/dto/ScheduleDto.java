@@ -13,8 +13,9 @@ import java.util.Set;
 @EqualsAndHashCode
 public class ScheduleDto {
     private int id;
-    private Set<String> scheduleHours = new LinkedHashSet<>();
-    private PublicTransportDto transport;
+    private String hours;
+//    private Set<String> scheduleHours = new LinkedHashSet<>();
+    private PublicTransportDto publicTransport;
     private StopDto stop;
     //
     //    @ManyToOne(fetch = FetchType.LAZY)

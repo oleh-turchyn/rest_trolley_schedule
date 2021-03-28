@@ -23,6 +23,7 @@ public class PublicTransport {
     private double price;
     private int amountOfSeats;
     @OneToOne(cascade = CascadeType.ALL)
+    @JsonIgnore
     @JoinColumn(name = "route_id", referencedColumnName = "id")
     private Route route;
 

@@ -53,7 +53,7 @@ public class StopController {
     }
 
     @DeleteMapping("/stops/{id}")
-    public ResponseEntity delete(@PathVariable int id) {
+    public ResponseEntity<StopDto> delete(@PathVariable int id) {
         stopService.removeById(id);
 
         return ResponseEntity.status(HttpStatus.ACCEPTED).build();

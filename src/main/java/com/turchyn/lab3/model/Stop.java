@@ -23,8 +23,9 @@ public class Stop {
     private int id;
     private String name;
     private String carrier;
-
+    private String transport;
     @ElementCollection
+    @JsonIgnore
     @CollectionTable(name = "available_transport",joinColumns = @JoinColumn(name = "stop_id"))
     private Set<String> availableTransport = new LinkedHashSet<>();
 
