@@ -15,10 +15,13 @@ import java.util.Set;
 public class RouteDto {
     private int id;
     private int number;
-//    private PublicTransportDto transport; // отут подумати
+    //    private PublicTransportDto transport; // отут подумати
 //    private Set<String> routeDays = new LinkedHashSet<>();
-    private String days;
     private String title;
+    private String days;
+    private PublicTransportDto publicTransport;
+    private Set<StopDto> stops = new HashSet<>();
+
 //    private Set<StopDto> stops = new HashSet<>();
 
     //    @OneToOne(mappedBy = "route_tb")

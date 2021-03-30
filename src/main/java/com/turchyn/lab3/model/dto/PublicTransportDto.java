@@ -1,5 +1,6 @@
 package com.turchyn.lab3.model.dto;
 
+import com.turchyn.lab3.model.transport.TransportType;
 import lombok.*;
 
 import java.util.HashSet;
@@ -16,6 +17,18 @@ public class PublicTransportDto {
     private String type;
     private double price;
     private int amountOfSeats;
+    private RouteDto route;
+    private TransportType transportType;
+
+//private int id;
+//    private String type;
+//    private double price;
+//    private int amountOfSeats;
+//    @OneToOne(cascade = CascadeType.ALL,mappedBy = "transport")
+//    private Route route;
+//    private TransportType transportType;
+
+
 //    private RouteDto routeNumber;
 //    private Set<StopDto> stops= new HashSet<>();
 //    private Set<ScheduleDto> schedules = new HashSet<>();
