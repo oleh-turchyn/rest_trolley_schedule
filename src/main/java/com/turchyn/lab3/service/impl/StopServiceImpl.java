@@ -37,4 +37,9 @@ public class StopServiceImpl implements StopService {
     public List<Stop> findAll() {
         return stopRepository.findAll();
     }
+
+    public List<Stop> findAllByName(String name) {
+        return stopRepository.findAllByName(name);
+    }
+
 }

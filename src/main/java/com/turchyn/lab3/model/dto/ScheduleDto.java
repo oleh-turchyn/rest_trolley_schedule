@@ -2,9 +2,6 @@ package com.turchyn.lab3.model.dto;
 
 import lombok.*;
 
-import java.util.LinkedHashSet;
-import java.util.Set;
-
 @Getter
 @Setter
 @ToString

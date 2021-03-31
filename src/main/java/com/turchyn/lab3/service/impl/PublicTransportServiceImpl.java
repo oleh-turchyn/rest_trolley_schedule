@@ -37,4 +37,14 @@ public class PublicTransportServiceImpl implements PublicTransportService {
     public List<PublicTransport> findAll() {
         return publicTransportRepository.findAll();
     }
+
+    public List<PublicTransport> searchByType(String type) {
+        return publicTransportRepository.searchByType(type);
+    }
+
+    public List<PublicTransport> findPublicTransportByType(String type) {
+        return publicTransportRepository.findPublicTransportByType(type);
+    }
+
+
 }

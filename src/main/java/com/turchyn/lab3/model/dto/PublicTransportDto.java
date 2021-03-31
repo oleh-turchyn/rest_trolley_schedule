@@ -3,9 +3,6 @@ package com.turchyn.lab3.model.dto;
 import com.turchyn.lab3.model.transport.TransportType;
 import lombok.*;
 
-import java.util.HashSet;
-import java.util.Set;
-
 @Getter
 @Setter
 @ToString

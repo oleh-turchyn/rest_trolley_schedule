@@ -37,4 +37,14 @@ public class RouteServiceImpl implements RouteService {
     public List<Route> findAll() {
         return routeRepository.findAll();
     }
+
+    public List<Route> findAllByNumber(int number) {
+        return routeRepository.findAllByNumber(number);
+    }
+
+    public List<Route> findAllByTitle(String title) {
+        return routeRepository.findAllByTitle(title);
+    }
+
+
 }

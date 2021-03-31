@@ -3,7 +3,6 @@ package com.turchyn.lab3.model.dto;
 import lombok.*;
 
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Getter

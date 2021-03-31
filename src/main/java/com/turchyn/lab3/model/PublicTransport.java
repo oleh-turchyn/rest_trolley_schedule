@@ -1,12 +1,9 @@
 package com.turchyn.lab3.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.turchyn.lab3.model.transport.TransportType;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Getter
 @Setter
