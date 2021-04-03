@@ -42,6 +42,7 @@ public class PublicTransportServiceImpl implements PublicTransportService {
         return publicTransportRepository.searchByType(type);
     }
 
+    @Override
     public List<PublicTransport> findPublicTransportByType(String type) {
         return publicTransportRepository.findPublicTransportByType(type);
     }

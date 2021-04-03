@@ -19,7 +19,7 @@ public class Route {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int number; // продумати чи треба окремо номер чи зійде айдішка + в репо метод по цьому  треба
-    private String title;
+    private String name;
     private String days;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "publicTransport_id", referencedColumnName = "id")

@@ -38,8 +38,9 @@ public class StopServiceImpl implements StopService {
         return stopRepository.findAll();
     }
 
-    public List<Stop> findAllByName(String name) {
-        return stopRepository.findAllByName(name);
+    @Override
+    public Stop findByName(String name) {
+        return stopRepository.findByName(name);
     }
 
 }

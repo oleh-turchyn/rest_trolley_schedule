@@ -6,6 +6,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
 import java.util.List;
+import java.util.Set;
 
 @Mapper
 public interface RouteMapper {
@@ -16,6 +17,7 @@ public interface RouteMapper {
     Route toRoute(RouteDto routeDto);
 
     List<RouteDto> routeToRouteDtos(List<Route> routes);
+    Set<RouteDto>routeToRouteDtosSet(List<Route> routes);
 
     List<Route> routeDtoToRoutes(List<RouteDto> routeDtos);
 }

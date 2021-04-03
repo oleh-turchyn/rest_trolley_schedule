@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface StopRepository extends JpaRepository<Stop,Integer> {
-    List<Stop> findAllByName(String name);
+    Stop findByName(String name);
 }

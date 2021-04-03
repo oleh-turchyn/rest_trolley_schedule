@@ -1,5 +1,7 @@
 package com.turchyn.lab3.model.dto;
 
+import com.turchyn.lab3.model.dto.postdto.PostStopDto;
+import com.turchyn.lab3.model.dto.postdto.PostTransportDto;
 import lombok.*;
 
 import java.util.HashSet;
@@ -16,10 +18,10 @@ public class RouteDto {
     private int number;
     //    private PublicTransportDto transport; // отут подумати
 //    private Set<String> routeDays = new LinkedHashSet<>();
-    private String title;
+    private String name;
     private String days;
-    private PublicTransportDto publicTransport;
-    private Set<StopDto> stops = new HashSet<>();
+    private PostTransportDto publicTransport;
+    private Set<PostStopDto> stops = new HashSet<>();
 
 //    private Set<StopDto> stops = new HashSet<>();
 

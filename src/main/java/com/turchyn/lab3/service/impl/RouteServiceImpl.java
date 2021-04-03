@@ -38,12 +38,19 @@ public class RouteServiceImpl implements RouteService {
         return routeRepository.findAll();
     }
 
+    @Override
     public List<Route> findAllByNumber(int number) {
         return routeRepository.findAllByNumber(number);
     }
 
-    public List<Route> findAllByTitle(String title) {
-        return routeRepository.findAllByTitle(title);
+    @Override
+    public List<Route> findAllByName(String title) {
+        return routeRepository.findAllByName(title);
+    }
+
+    @Override
+    public Route findByName(String name) {
+        return routeRepository.findByName(name);
     }
 
 
