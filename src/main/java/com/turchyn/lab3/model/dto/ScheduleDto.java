@@ -12,7 +12,7 @@ public class ScheduleDto {
     private int id;
     private String hours;
 //    private Set<String> scheduleHours = new LinkedHashSet<>();
-    private PublicTransportDto publicTransport;
+//    private PublicTransportDto publicTransport;
     private StopDto stop;
     //
     //    @ManyToOne(fetch = FetchType.LAZY)

@@ -12,7 +12,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@EqualsAndHashCode
+@EqualsAndHashCode(exclude = {"publicTransport","stops"})
 @Table(name = "route_tb")
 public class Route {
     @Id
@@ -24,8 +24,15 @@ public class Route {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "publicTransport_id", referencedColumnName = "id")
     private PublicTransport publicTransport;
-    @ManyToMany(mappedBy = "routes")
+//    @ManyToMany(mappedBy = "routes")
+//    private Set<Stop> stops = new HashSet<>();
+
+
+    @ManyToMany
+    @JoinTable(name = "stop_route", joinColumns = {@JoinColumn(name = "route_id")}, inverseJoinColumns = {@JoinColumn(name = "stop_id")})
     private Set<Stop> stops = new HashSet<>();
+//
+
 
 //    @ElementCollection
 //    @CollectionTable(name = "route_days",joinColumns = @JoinColumn(name = "route_id"))

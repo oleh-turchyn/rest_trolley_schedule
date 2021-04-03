@@ -11,7 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@EqualsAndHashCode
+@EqualsAndHashCode(exclude = {"route"})
 @Table(name = "publicTransport_tb")
 public class PublicTransport {
     @Id

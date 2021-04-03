@@ -1,8 +1,7 @@
 package com.turchyn.lab3.controller;
 
-import com.turchyn.lab3.mapper.StopMapper;
+import com.turchyn.lab3.mapper.postmapper.PostStopMapper;
 import com.turchyn.lab3.model.Stop;
-import com.turchyn.lab3.model.dto.StopDto;
 import com.turchyn.lab3.model.dto.postdto.PostRouteDto;
 import com.turchyn.lab3.model.dto.postdto.PostStopDto;
 import com.turchyn.lab3.model.dto.postdto.PostTransportDto;
@@ -31,36 +30,36 @@ public class StopController {
     }
 
     @GetMapping("/stops")
-    public ResponseEntity<List<StopDto>> findAll() {
-        return ResponseEntity.ok(StopMapper.INSTANCE.stopToStopDtos(stopService.findAll()));
+    public ResponseEntity<List<PostStopDto>> findAll() {
+        return ResponseEntity.ok(PostStopMapper.INSTANCE.stopToPostStopDtos(stopService.findAll()));
     }
 
     @PostMapping("/stops")
-    public ResponseEntity<StopDto> create(@RequestBody StopDto StopDto) {
-        stopService.save(StopMapper.INSTANCE.toStop(StopDto));
+    public ResponseEntity<PostStopDto> create(@RequestBody PostStopDto postStopDto) {
+        stopService.save(PostStopMapper.INSTANCE.toStop(postStopDto));
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(StopDto);
+        return ResponseEntity.status(HttpStatus.CREATED).body(postStopDto);
     }
 
     @GetMapping(value = "/stopById/{id}")
-    public ResponseEntity<StopDto> findById(@PathVariable int id) {
+    public ResponseEntity<PostStopDto> findById(@PathVariable int id) {
         Optional<Stop> stop = stopService.findById(id);
 
-        return ResponseEntity.ok(StopMapper.INSTANCE.toDto(stop.get()));
+        return ResponseEntity.ok(PostStopMapper.INSTANCE.toPostDto(stop.get()));
     }
 
     @PutMapping("/stops/{id}")
-    public ResponseEntity<StopDto> update(@PathVariable int id, @RequestBody StopDto StopDto) {
-        Stop stop = StopMapper.INSTANCE.toStop(StopDto);
+    public ResponseEntity<PostStopDto> update(@PathVariable int id, @RequestBody PostStopDto postStopDto) {
+        Stop stop = PostStopMapper.INSTANCE.toStop(postStopDto);
         stop.setId(id);
 
         stopService.save(stop);
 
-        return ResponseEntity.status(HttpStatus.ACCEPTED).body(StopDto);
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(postStopDto);
     }
 
     @DeleteMapping("/stops/{id}")
-    public ResponseEntity<StopDto> delete(@PathVariable int id) {
+    public ResponseEntity<PostStopDto> delete(@PathVariable int id) {
         stopService.removeById(id);
 
         return ResponseEntity.status(HttpStatus.ACCEPTED).build();

@@ -12,7 +12,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@EqualsAndHashCode
+@EqualsAndHashCode(exclude={"routes"})
 @Table(name = "stop_tb")
 public class Stop {
     @Id
@@ -25,9 +25,17 @@ public class Stop {
             orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Schedule> schedules = new HashSet<>();
 
-    @ManyToMany
-    @JoinTable(name = "stop_route", joinColumns = {@JoinColumn(name = "stop_id")}, inverseJoinColumns = {@JoinColumn(name = "route_id")})
+//    @ManyToMany
+//    @JoinTable(name = "stop_route", joinColumns = {@JoinColumn(name = "stop_id")}, inverseJoinColumns = {@JoinColumn(name = "route_id")})
+//    private Set<Route> routes = new HashSet<>();
+
+
+
+
+    @ManyToMany(mappedBy = "stops")
     private Set<Route> routes = new HashSet<>();
+
+
 
 //    @ElementCollection
 //    @JsonIgnore

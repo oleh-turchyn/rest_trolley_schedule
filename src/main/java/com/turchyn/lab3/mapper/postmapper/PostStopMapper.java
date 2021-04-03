@@ -2,11 +2,13 @@ package com.turchyn.lab3.mapper.postmapper;
 
 import com.turchyn.lab3.model.Stop;
 import com.turchyn.lab3.model.dto.postdto.PostStopDto;
+import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
 import java.util.List;
 import java.util.Set;
 
+@Mapper
 public interface PostStopMapper {
     PostStopMapper INSTANCE = Mappers.getMapper(PostStopMapper.class);
 
