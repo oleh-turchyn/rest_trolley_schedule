@@ -23,7 +23,7 @@ public class StopUtil {
     }
 
     //у яких маршрутах є ця зупинка
-    public Set<PostRouteDto> getRotesByStopName(String stopName) {
+    public Set<PostRouteDto> getRoutesByStopName(String stopName) {
         StopDto stopDto = StopMapper.INSTANCE.toDto(stopService.findByName(stopName));
         Set<RouteDto> routeDtoSet;
         routeDtoSet = stopDto.getRoutes();

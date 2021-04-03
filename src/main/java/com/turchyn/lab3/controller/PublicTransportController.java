@@ -3,13 +3,16 @@ package com.turchyn.lab3.controller;
 import com.turchyn.lab3.mapper.PublicTransportMapper;
 import com.turchyn.lab3.model.PublicTransport;
 import com.turchyn.lab3.model.dto.PublicTransportDto;
+import com.turchyn.lab3.model.dto.postdto.PostStopDto;
 import com.turchyn.lab3.service.PublicTransportService;
+import com.turchyn.lab3.util.PublicTransportUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:9191")
@@ -17,10 +20,12 @@ import java.util.Optional;
 @RequestMapping("/api")
 public class PublicTransportController {
     PublicTransportService publicTransportService;
+    PublicTransportUtil publicTransportUtil;
 
     @Autowired
-    public PublicTransportController(PublicTransportService publicTransportService) {
+    public PublicTransportController(PublicTransportService publicTransportService, PublicTransportUtil publicTransportUtil) {
         this.publicTransportService = publicTransportService;
+        this.publicTransportUtil = publicTransportUtil;
     }
 
     @GetMapping("/transports")
@@ -57,5 +62,10 @@ public class PublicTransportController {
         publicTransportService.removeById(id);
 
         return ResponseEntity.status(HttpStatus.ACCEPTED).build();
+    }
+
+    @GetMapping("/getStopsByTransportId/{id}")
+    public ResponseEntity<Set<PostStopDto>> getStopsByTransportId(@PathVariable int id) {
+        return ResponseEntity.ok(publicTransportUtil.getStopsByTransportId(id));
     }
 }
