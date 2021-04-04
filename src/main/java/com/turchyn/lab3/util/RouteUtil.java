@@ -10,6 +10,7 @@ import com.turchyn.lab3.service.RouteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -26,7 +27,7 @@ public class RouteUtil {
     //які зупинки є у маршруту
     public Set<PostStopDto> getStopsByRouteName(String routeName) {
         RouteDto routeDto = RouteMapper.INSTANCE.toDto(routeService.findByName(routeName));
-        Set<PostStopDto> postStopDtoSet;
+        Set<PostStopDto> postStopDtoSet = new HashSet<>();
         postStopDtoSet = routeDto.getStops();
         return postStopDtoSet;
     }
@@ -34,7 +35,7 @@ public class RouteUtil {
     //які види транспорту їздять по одному номеру маршруту
     public Set<PostTransportDto> getTransportsByRouteNumber(int routeNumber){
         List<PostRouteDto> postRouteDtosList = PostRouteMapper.INSTANCE.routeToPostRouteDtos(routeService.findAllByNumber(routeNumber));
-        Set<PostTransportDto> transportsDtoSet = new LinkedHashSet<>();
+        Set<PostTransportDto> transportsDtoSet = new HashSet<>();
         for (PostRouteDto postRouteDto:postRouteDtosList){
             transportsDtoSet.add(postRouteDto.getPublicTransport());
         }

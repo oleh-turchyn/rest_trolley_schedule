@@ -14,11 +14,11 @@ public interface PostRouteMapper {
 
     PostRouteDto toPostDto(Route route);
 
-    Route toRoute(PostRouteDto postRouteDto);
+    Route postDtoToRoute(PostRouteDto postRouteDto);
 
     List<PostRouteDto> routeToPostRouteDtos(List<Route> routes);
 
     Set<PostRouteDto> routeToPostRouteDtosSet(List<Route> routes);
 
-    List<Route> routeDtoToRoutes(List<PostRouteDto> routeDtos);
+    List<Route> postRouteDtoToRoutes(List<PostRouteDto> routeDtos);
 }

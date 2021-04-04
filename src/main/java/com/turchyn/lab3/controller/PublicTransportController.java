@@ -35,7 +35,7 @@ public class PublicTransportController {
 
     @PostMapping("/transports")
     public ResponseEntity<PostTransportDto> create(@RequestBody PostTransportDto postTransportDto) {
-        publicTransportService.save(PostTransportMapper.INSTANCE.toPublicTransport(postTransportDto));
+        publicTransportService.save(PostTransportMapper.INSTANCE.postDtoToPublicTransport(postTransportDto));
 
         return ResponseEntity.status(HttpStatus.CREATED).body(postTransportDto);
     }
@@ -49,7 +49,7 @@ public class PublicTransportController {
 
     @PutMapping("/transports/{id}")
     public ResponseEntity<PostTransportDto> update(@PathVariable int id, @RequestBody PostTransportDto postTransportDto) {
-        PublicTransport publicTransport = PostTransportMapper.INSTANCE.toPublicTransport(postTransportDto);
+        PublicTransport publicTransport = PostTransportMapper.INSTANCE.postDtoToPublicTransport(postTransportDto);
         publicTransport.setId(id);
 
         publicTransportService.save(publicTransport);

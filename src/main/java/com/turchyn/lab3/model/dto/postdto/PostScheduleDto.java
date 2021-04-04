@@ -2,20 +2,14 @@ package com.turchyn.lab3.model.dto.postdto;
 
 import lombok.*;
 
-import java.util.HashSet;
-import java.util.Set;
-
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-public class PostRouteDto {
+public class PostScheduleDto {
     private int id;
-    private int number;
-    private String name;
-    private String days;
+    private String hours;
     private PostTransportDto publicTransport;
-//    private Set<PostStopDto> stops = new HashSet<>();
 }

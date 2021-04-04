@@ -1,5 +1,6 @@
 package com.turchyn.lab3.model.dto;
 
+import com.turchyn.lab3.model.Schedule;
 import com.turchyn.lab3.model.transport.TransportType;
 import lombok.*;
 
@@ -15,6 +16,7 @@ public class PublicTransportDto {
     private double price;
     private int amountOfSeats;
     private RouteDto route;
+    private ScheduleDto scheduleDto;
     private TransportType transportType;
 
 //private int id;

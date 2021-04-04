@@ -13,7 +13,7 @@ public interface PostTransportMapper {
 
     PostTransportDto toDto(PublicTransport publicTransport);
 
-    PublicTransport toPublicTransport(PostTransportDto postTransportDto);
+    PublicTransport postDtoToPublicTransport(PostTransportDto postTransportDto);
 
     List<PostTransportDto> transportToPostTransportDtos(List<PublicTransport> transports);
 //    Set<PublicTransportDto> transportToTransportDtosSet(List<PublicTransport> routes);

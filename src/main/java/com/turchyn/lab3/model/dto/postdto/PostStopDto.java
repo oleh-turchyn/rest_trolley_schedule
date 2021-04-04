@@ -1,6 +1,10 @@
 package com.turchyn.lab3.model.dto.postdto;
 
+import com.turchyn.lab3.model.dto.ScheduleDto;
 import lombok.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -11,4 +15,5 @@ import lombok.*;
 public class PostStopDto {
     private int id;
     private String name;
+    private Set<PostScheduleDto> schedules = new HashSet<>();
 }

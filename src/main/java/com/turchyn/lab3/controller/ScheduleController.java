@@ -1,8 +1,8 @@
 package com.turchyn.lab3.controller;
 
-import com.turchyn.lab3.mapper.ScheduleMapper;
+import com.turchyn.lab3.mapper.postmapper.PostScheduleMapper;
 import com.turchyn.lab3.model.Schedule;
-import com.turchyn.lab3.model.dto.ScheduleDto;
+import com.turchyn.lab3.model.dto.postdto.PostScheduleDto;
 import com.turchyn.lab3.service.ScheduleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,32 +23,32 @@ public class ScheduleController {
         this.scheduleService = scheduleService;
     }
     @GetMapping("/schedules")
-    public ResponseEntity<List<ScheduleDto>> findAll() {
-        return ResponseEntity.ok(ScheduleMapper.INSTANCE.scheduleToScheduleDtos(scheduleService.findAll()));
+    public ResponseEntity<List<PostScheduleDto>> findAll() {
+        return ResponseEntity.ok(PostScheduleMapper.INSTANCE.scheduleToPostScheduleDtos(scheduleService.findAll()));
     }
 
     @PostMapping("/schedules")
-    public ResponseEntity<ScheduleDto> create(@RequestBody ScheduleDto ScheduleDto) {
-        scheduleService.save(ScheduleMapper.INSTANCE.toSchedule(ScheduleDto));
+    public ResponseEntity<PostScheduleDto> create(@RequestBody PostScheduleDto postScheduleDto) {
+        scheduleService.save(PostScheduleMapper.INSTANCE.postDtoToSchedule(postScheduleDto));
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(ScheduleDto);
+        return ResponseEntity.status(HttpStatus.CREATED).body(postScheduleDto);
     }
 
     @GetMapping(value = "/scheduleById/{id}")
-    public ResponseEntity<ScheduleDto> findById(@PathVariable int id) {
+    public ResponseEntity<PostScheduleDto> findById(@PathVariable int id) {
         Optional<Schedule> schedule = scheduleService.findById(id);
 
-        return ResponseEntity.ok(ScheduleMapper.INSTANCE.toDto(schedule.get()));
+        return ResponseEntity.ok(PostScheduleMapper.INSTANCE.toPostDto(schedule.get()));
     }
 
     @PutMapping("/schedules/{id}")
-    public ResponseEntity<ScheduleDto> update(@PathVariable int id, @RequestBody ScheduleDto ScheduleDto) {
-        Schedule schedule = ScheduleMapper.INSTANCE.toSchedule(ScheduleDto);
+    public ResponseEntity<PostScheduleDto> update(@PathVariable int id, @RequestBody PostScheduleDto postScheduleDto) {
+        Schedule schedule = PostScheduleMapper.INSTANCE.postDtoToSchedule(postScheduleDto);
         schedule.setId(id);
 
         scheduleService.save(schedule);
 
-        return ResponseEntity.status(HttpStatus.ACCEPTED).body(ScheduleDto);
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(postScheduleDto);
     }
 
     @DeleteMapping("/schedules/{id}")

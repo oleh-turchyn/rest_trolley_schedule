@@ -11,7 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@EqualsAndHashCode(exclude = {"route"})
+@EqualsAndHashCode(exclude = {"route","schedule"})
 @Table(name = "publicTransport_tb")
 public class PublicTransport {
     @Id
@@ -22,16 +22,8 @@ public class PublicTransport {
     private int amountOfSeats;
     @OneToOne(cascade = CascadeType.ALL,mappedBy = "publicTransport")
     private Route route;
+    @OneToOne(cascade = CascadeType.ALL,mappedBy = "publicTransport")
+    private Schedule schedule;
     private TransportType transportType;
 
-
-//    @OneToMany(mappedBy = "publicTransport", cascade = CascadeType.ALL,
-//            orphanRemoval = true)
-//    @JsonIgnore
-//    private Set<Stop> stops = new HashSet<>();
-//
-//    @OneToMany(mappedBy = "publicTransport", cascade = CascadeType.ALL,
-//            orphanRemoval = true)
-//    @JsonIgnore
-//    private Set<Schedule> schedules = new HashSet<>();
 }

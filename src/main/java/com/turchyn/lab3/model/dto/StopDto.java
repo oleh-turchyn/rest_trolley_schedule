@@ -14,6 +14,6 @@ import java.util.Set;
 public class StopDto {
     private int id;
     private String name;
-    private Set<ScheduleDto> schedules = new HashSet<>();
     private Set<RouteDto> routes = new HashSet<>();
+    private Set<ScheduleDto> schedules = new HashSet<>();
 }

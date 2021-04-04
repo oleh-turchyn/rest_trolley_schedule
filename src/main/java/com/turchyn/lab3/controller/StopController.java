@@ -3,6 +3,7 @@ package com.turchyn.lab3.controller;
 import com.turchyn.lab3.mapper.postmapper.PostStopMapper;
 import com.turchyn.lab3.model.Stop;
 import com.turchyn.lab3.model.dto.postdto.PostRouteDto;
+import com.turchyn.lab3.model.dto.postdto.PostScheduleDto;
 import com.turchyn.lab3.model.dto.postdto.PostStopDto;
 import com.turchyn.lab3.model.dto.postdto.PostTransportDto;
 import com.turchyn.lab3.service.StopService;
@@ -36,7 +37,7 @@ public class StopController {
 
     @PostMapping("/stops")
     public ResponseEntity<PostStopDto> create(@RequestBody PostStopDto postStopDto) {
-        stopService.save(PostStopMapper.INSTANCE.toStop(postStopDto));
+        stopService.save(PostStopMapper.INSTANCE.postDtoToStop(postStopDto));
 
         return ResponseEntity.status(HttpStatus.CREATED).body(postStopDto);
     }
@@ -50,7 +51,7 @@ public class StopController {
 
     @PutMapping("/stops/{id}")
     public ResponseEntity<PostStopDto> update(@PathVariable int id, @RequestBody PostStopDto postStopDto) {
-        Stop stop = PostStopMapper.INSTANCE.toStop(postStopDto);
+        Stop stop = PostStopMapper.INSTANCE.postDtoToStop(postStopDto);
         stop.setId(id);
 
         stopService.save(stop);
@@ -74,4 +75,10 @@ public class StopController {
     public ResponseEntity<Set<PostTransportDto>> getTransportByStopName(@PathVariable String name) {
         return ResponseEntity.ok(stopUtil.getTransportByStopName(name));
     }
+
+    @GetMapping("/getSchedulesByStopName/{name}")
+    public ResponseEntity<Set<PostScheduleDto>> getSchedulesByStopName(@PathVariable String name) {
+        return ResponseEntity.ok(stopUtil.getSchedulesByStopName(name));
+    }
+
 }

@@ -1,6 +1,10 @@
 package com.turchyn.lab3.model.dto;
 
+import com.turchyn.lab3.model.dto.postdto.PostTransportDto;
 import lombok.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -11,12 +15,7 @@ import lombok.*;
 public class ScheduleDto {
     private int id;
     private String hours;
-//    private Set<String> scheduleHours = new LinkedHashSet<>();
-//    private PublicTransportDto publicTransport;
-    private StopDto stop;
-    //
-    //    @ManyToOne(fetch = FetchType.LAZY)
-    //    @JoinColumn(foreignKey = @ForeignKey(name = "stop_id"), name = "stop_id")
-    //    @JsonIgnoreProperties(value = {"schedule_tb", "hibernateLazyInitializer"})
-    //    private Stop stop;
+    //    private StopDto stop;
+    private Set<StopDto> stops = new HashSet<>();
+    private PostTransportDto publicTransport;
 }

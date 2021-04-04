@@ -14,12 +14,12 @@ public interface PostStopMapper {
 
     PostStopDto toPostDto(Stop stop);
 
-    Stop toStop(PostStopDto postStopDto);
+    Stop postDtoToStop(PostStopDto postStopDto);
 
     List<PostStopDto> stopToPostStopDtos(List<Stop> stops);
 
     Set<PostStopDto> stopToPostStopDtosSet(List<Stop> stops);
 
-    List<Stop> stopDtoToStops(List<PostStopDto> stopDtos);
+    List<Stop> stopPostDtoToStops(List<PostStopDto> stopDtos);
 
 }
