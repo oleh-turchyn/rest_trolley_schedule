@@ -64,8 +64,8 @@ public class PublicTransportController {
         return ResponseEntity.status(HttpStatus.ACCEPTED).build();
     }
 
-    @GetMapping("/getStopsByTransportId/{id}")
-    public ResponseEntity<Set<PostStopDto>> getStopsByTransportId(@PathVariable int id) {
-        return ResponseEntity.ok(publicTransportUtil.getStopsByTransportId(id));
-    }
+//    @GetMapping("/getStopsByTransportId/{id}")
+//    public ResponseEntity<Set<PostStopDto>> getStopsByTransportId(@PathVariable int id) {
+//        return ResponseEntity.ok(publicTransportUtil.getStopsByTransportId(id));
+//    }
 }

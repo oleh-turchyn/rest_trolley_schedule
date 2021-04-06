@@ -1,5 +1,7 @@
 package com.turchyn.lab3.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
@@ -23,6 +25,7 @@ public class Schedule {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "publicTransport_id", referencedColumnName = "id")
     private PublicTransport publicTransport;
+
 
     @ManyToMany(mappedBy = "schedules")
     private Set<Stop> stops = new HashSet<>();

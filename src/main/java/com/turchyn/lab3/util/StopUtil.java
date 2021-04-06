@@ -47,14 +47,14 @@ public class StopUtil {
         return transportsDtoSet;
     }
 
-    public Set<PostScheduleDto> getSchedulesByStopName(String stopName){
-        StopDto stopDto = StopMapper.INSTANCE.toDto(stopService.findByName(stopName));
-        Set<ScheduleDto> scheduleDtoSet = stopDto.getSchedules();
-        Set<PostScheduleDto> postScheduleDtoSet = new LinkedHashSet<>();
-        for (ScheduleDto scheduleDto: scheduleDtoSet){
-            postScheduleDtoSet.add(new PostScheduleDto(scheduleDto.getId(),scheduleDto.getHours(),scheduleDto.getPublicTransport()));
-        }
-        return postScheduleDtoSet;
-
-    }
+//    public Set<PostScheduleDto> getSchedulesByStopName(String stopName){
+//        StopDto stopDto = StopMapper.INSTANCE.toDto(stopService.findByName(stopName));
+//        Set<ScheduleDto> scheduleDtoSet = stopDto.getSchedules();
+//        Set<PostScheduleDto> postScheduleDtoSet = new LinkedHashSet<>();
+//        for (ScheduleDto scheduleDto: scheduleDtoSet){
+//            postScheduleDtoSet.add(new PostScheduleDto(scheduleDto.getId(),scheduleDto.getHours(),scheduleDto.getPublicTransport()));
+//        }
+//        return postScheduleDtoSet;
+//
+//    }
 }

@@ -1,5 +1,6 @@
 package com.turchyn.lab3.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
@@ -22,7 +23,7 @@ public class Stop {
     private String name;
 
     @ManyToMany(mappedBy = "stops")
-//    @JsonIgnore
+    @JsonBackReference
     private Set<Route> routes = new HashSet<>();
 
 

@@ -1,5 +1,8 @@
 package com.turchyn.lab3.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -27,5 +30,6 @@ public class Route {
 
     @ManyToMany
     @JoinTable(name = "stop_route", joinColumns = {@JoinColumn(name = "route_id")}, inverseJoinColumns = {@JoinColumn(name = "stop_id")})
+    @JsonManagedReference
     private Set<Stop> stops = new HashSet<>();
 }

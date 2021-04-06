@@ -19,9 +19,9 @@ public class PublicTransportUtil {
         this.publicTransportService = publicTransportService;
         this.routeUtil=routeUtil;
     }
-    //дістати зупинки по яких їздить цей транспорт
-    public Set<PostStopDto> getStopsByTransportId(int id){
-        PublicTransportDto publicTransportDto = PublicTransportMapper.INSTANCE.toDto(publicTransportService.findById(id).get());
-        return routeUtil.getStopsByRouteName(publicTransportDto.getRoute().getName());
-    }
+//    //дістати зупинки по яких їздить цей транспорт
+//    public Set<PostStopDto> getStopsByTransportId(int id){
+//        PublicTransportDto publicTransportDto = PublicTransportMapper.INSTANCE.toDto(publicTransportService.findById(id).get());
+//        return routeUtil.getStopsByRouteName(publicTransportDto.getRoute().getName());
+//    }
 }
