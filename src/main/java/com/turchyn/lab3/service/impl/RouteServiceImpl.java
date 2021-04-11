@@ -43,10 +43,6 @@ public class RouteServiceImpl implements RouteService {
         return routeRepository.findAllByNumber(number);
     }
 
-    @Override
-    public List<Route> findAllByName(String title) {
-        return routeRepository.findAllByName(title);
-    }
 
     @Override
     public Route findByName(String name) {

@@ -1,6 +1,5 @@
 package com.turchyn.lab3.model;
 
-import com.turchyn.lab3.model.transport.TransportType;
 import lombok.*;
 
 import javax.persistence.*;
@@ -24,6 +23,5 @@ public class PublicTransport {
     private Route route;
     @OneToOne(cascade = CascadeType.ALL,mappedBy = "publicTransport")
     private Schedule schedule;
-    private TransportType transportType;
 
 }

@@ -1,6 +1,5 @@
 package com.turchyn.lab3.model.dto.postdto;
 
-import com.turchyn.lab3.model.dto.ScheduleDto;
 import lombok.*;
 
 import java.util.HashSet;

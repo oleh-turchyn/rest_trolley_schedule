@@ -15,7 +15,6 @@ import java.util.Set;
 public class ScheduleDto {
     private int id;
     private String hours;
-    //    private StopDto stop;
     private Set<StopDto> stops = new HashSet<>();
     private PostTransportDto publicTransport;
 }

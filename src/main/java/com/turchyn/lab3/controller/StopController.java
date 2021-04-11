@@ -75,10 +75,5 @@ public class StopController {
     public ResponseEntity<Set<PostTransportDto>> getTransportByStopName(@PathVariable String name) {
         return ResponseEntity.ok(stopUtil.getTransportByStopName(name));
     }
-//
-//    @GetMapping("/getSchedulesByStopName/{name}")
-//    public ResponseEntity<Set<PostScheduleDto>> getSchedulesByStopName(@PathVariable String name) {
-//        return ResponseEntity.ok(stopUtil.getSchedulesByStopName(name));
-//    }
 
 }

@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface RouteRepository extends JpaRepository<Route,Integer> {
     List<Route> findAllByNumber(int number);
-    List<Route> findAllByName(String title); // видалити
+    List<Route> findAllByName(String title);
     Route findByName(String name);
 }

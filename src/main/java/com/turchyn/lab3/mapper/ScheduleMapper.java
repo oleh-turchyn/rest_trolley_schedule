@@ -1,8 +1,6 @@
 package com.turchyn.lab3.mapper;
 
-import com.turchyn.lab3.model.Route;
 import com.turchyn.lab3.model.Schedule;
-import com.turchyn.lab3.model.dto.RouteDto;
 import com.turchyn.lab3.model.dto.ScheduleDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

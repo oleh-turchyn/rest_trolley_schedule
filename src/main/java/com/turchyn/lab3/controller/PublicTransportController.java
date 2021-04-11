@@ -50,7 +50,7 @@ public class PublicTransportController {
     @PutMapping("/transports/{id}")
     public ResponseEntity<PostTransportDto> update(@PathVariable int id, @RequestBody PostTransportDto postTransportDto) {
         PublicTransport publicTransport = PostTransportMapper.INSTANCE.postDtoToPublicTransport(postTransportDto);
-        publicTransport.setId(id);
+        publicTransport.setAmountOfSeats(postTransportDto.getAmountOfSeats());
 
         publicTransportService.save(publicTransport);
 
@@ -64,8 +64,5 @@ public class PublicTransportController {
         return ResponseEntity.status(HttpStatus.ACCEPTED).build();
     }
 
-//    @GetMapping("/getStopsByTransportId/{id}")
-//    public ResponseEntity<Set<PostStopDto>> getStopsByTransportId(@PathVariable int id) {
-//        return ResponseEntity.ok(publicTransportUtil.getStopsByTransportId(id));
-//    }
+
 }
